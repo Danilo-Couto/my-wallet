@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 function userReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case LOGIN:
-    return { ...state, email: action.payload }; //    return { ...state, user: { email: action.payload } };
+    return { email: action.payload }; //    return { ...state, user: { email: action.payload } }; assim ele guarda certo, mas nao passa no
   default:
     return state;
   }
