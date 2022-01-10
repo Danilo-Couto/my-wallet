@@ -10,8 +10,36 @@ class Login extends Component {
     this.state = {
       email: '',
       senha: '',
+      // isButtonDisabled: true,
     };
   }
+
+  /*   handleChange({ target }) {
+    const { value, name } = target;
+
+    this.setState({
+      [name]: value,
+    }, () => this.handleButtonStatus());
+  }
+
+    handleButtonStatus() {
+    const { email, password } = this.state;
+    const regexp = /^[^\s@]+@[^\s@]+\.com$/;
+    // Referência da regexp: https://stackoverflow.com/a/9204568/16902419
+    const SIX = 6;
+
+    const validation = [
+      regexp.test(email),
+      password.length >= SIX,
+    ];
+
+    const isButtonDisabled = validation.every((el) => el);
+
+    this.setState({
+      isButtonDisabled: !isButtonDisabled,
+    });
+  }
+  */
 
   submitLogin = () => {
     const { history, setLogin } = this.props;
@@ -46,9 +74,10 @@ class Login extends Component {
           <input
             type="email"
             onChange={ (e) => this.setState({ email: e.target.value }) }
-            placeholder="E-mail"
+            placeholder="exemplo@exemplo.com"
             data-testid="email-input"
             required
+            // value={email}
           />
           <input
             type="password"
@@ -57,6 +86,8 @@ class Login extends Component {
             data-testid="password-input"
             required
             minLength={ 6 }
+            // value={senha}
+
           />
         </section>
         <div className="link">
