@@ -69,7 +69,7 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <h3 className="text-center">Login</h3>
+        <h3>Login</h3>
         <section className="login-inputs">
           <input
             type="email"
@@ -111,7 +111,9 @@ Login.propTypes = {
   setRegister: PropTypes.func,
 }.isrequired;
 
-/* const mapStateToProps = (state) => (state.userReducer); */
+const mapStateToProps = (state) => (
+  { expense: state.wallet }
+);
 
 const mapDispatchToProps = (dispatch) => ({
   setLogin: (payload) => dispatch(loginAction(payload)),

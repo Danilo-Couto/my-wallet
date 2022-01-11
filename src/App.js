@@ -10,7 +10,6 @@ function App() {
       <Route exact path="/" component={ Login } />
       <Route path="/carteira" component={ Wallet } />
       <Route path="/header" component={ Header } />
-
     </Switch>
   );
 }
