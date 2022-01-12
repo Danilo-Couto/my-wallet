@@ -39,6 +39,7 @@ class Header extends Component {
           </h4>
           <h4 data-testid="total-field">
             despesa:
+            0
             {totalAmount}
           </h4>
           <h4 data-testid="header-currency-field">câmbio:BRL</h4>
