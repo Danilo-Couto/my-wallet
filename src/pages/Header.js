@@ -11,19 +11,19 @@ class Header extends Component {
     };
   }
 
-  calcAmount = () => {
+  /*   calcAmount = () => {
     const { expense } = this.props;
     const arrayAmount = expense.map((el) => el.value);
-    const amount = arrayAmount.reduce((pre, curr) => Number(pre) + Number(curr))
-    console.log(amount)
-    /*   this.setState({
-      totalAmount: 
-    }); */
+    const amount = arrayAmount.reduce((pre, curr) => Number(pre) + Number(curr));
+
+    this.setState({
+      totalAmount: amount,
+    });
   }
 
   componentDidUpdate = () => {
     this.calcAmount();
-  }
+  } */
 
   render() {
     const { loginUser } = this.props;
@@ -48,20 +48,16 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  expense: PropTypes.shape({
-    map: PropTypes.func,
-  }),
-  loginUser: PropTypes.string,
-}.isRequired;
-
 const mapStateToProps = (state) => ({
   loginUser: state.user.email,
   expense: state.wallet.expenses,
 });
 
 Header.propTypes = {
-  userLogin: PropTypes.string,
+  expense: PropTypes.shape({
+    map: PropTypes.func,
+  }),
+  loginUser: PropTypes.string,
 }.isRequired;
 
 export default connect(mapStateToProps)(Header);

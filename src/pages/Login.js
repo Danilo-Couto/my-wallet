@@ -14,33 +14,6 @@ class Login extends Component {
     };
   }
 
-  /*   handleChange({ target }) {
-    const { value, name } = target;
-
-    this.setState({
-      [name]: value,
-    }, () => this.handleButtonStatus());
-  }
-
-    handleButtonStatus() {
-    const { email, password } = this.state;
-    const regexp = /^[^\s@]+@[^\s@]+\.com$/;
-    // Referência da regexp: https://stackoverflow.com/a/9204568/16902419
-    const SIX = 6;
-
-    const validation = [
-      regexp.test(email),
-      password.length >= SIX,
-    ];
-
-    const isButtonDisabled = validation.every((el) => el);
-
-    this.setState({
-      isButtonDisabled: !isButtonDisabled,
-    });
-  }
-  */
-
   submitLogin = () => {
     const { history, setLogin } = this.props;
     const { email } = this.state;
@@ -110,10 +83,6 @@ Login.propTypes = {
   }),
   setRegister: PropTypes.func,
 }.isrequired;
-
-const mapStateToProps = (state) => (
-  { expense: state.wallet }
-);
 
 const mapDispatchToProps = (dispatch) => ({
   setLogin: (payload) => dispatch(loginAction(payload)),

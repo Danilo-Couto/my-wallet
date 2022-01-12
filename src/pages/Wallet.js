@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
@@ -62,7 +62,8 @@ class Wallet extends Component {
 
   render() {
     const { method, tag, currency } = this.state;
-    // console.log(expenses);
+    const { expense } = this.props;
+    console.log(expense);
 
     return (
       <div className="wallet">
@@ -132,18 +133,22 @@ class Wallet extends Component {
             <option value="Transporte">Transporte</option>
             <option value="Saúde">Saúde</option>
           </select>
+          <button
+            type="button"
+            onClick={ () => {
+              this.addExpense();
+              this.setState((prevState) => ({
+                id: prevState.id + 1,
+              }));
+            } }
+          >
+            Adicionar despesa
+          </button>
         </section>
-        <button
-          type="button"
-          onClick={ () => {
-            this.addExpense();
-            this.setState((prevState) => ({
-              id: prevState.id + 1,
-            }));
-          } }
-        >
-          Adicionar despesa
-        </button>
+        <section
+          className="chart"
+        />
+        TABELA
       </div>
     );
   }
@@ -153,8 +158,12 @@ const mapDispatchToProps = (dispatch) => ({
   setExpense: (payload) => dispatch(expenseAction(payload)),
 });
 
-export default connect(null, mapDispatchToProps)(Wallet);
+const mapStateToProps = (state) => ({
+  expense: state.wallet.expenses,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
 
 Wallet.propTypes = {
-  setExpense: PropTypes.func
+  setExpense: PropTypes.func,
 }.isRequired;
