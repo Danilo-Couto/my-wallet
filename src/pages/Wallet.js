@@ -12,7 +12,7 @@ class Wallet extends Component {
       id: 0,
       value: '',
       description: '',
-      currency: [],
+      currency: 'USD',
       method: '',
       tag: '',
       exchangeRates: '',
@@ -38,32 +38,36 @@ class Wallet extends Component {
     document.querySelectorAll('input[type=text]').forEach((element) => {
       element.value = '';
     });
+    this.getExchangeRate();
   };
 
-  getCurrencies = async () => {
+  /*   getCurrencies = async () => {
     const curr = 'https://economia.awesomeapi.com.br/json/all';
     const response = await fetch(curr);
     const json = await response.json();
-    const rates = await Object.values(json).map((el) => ({
-      code: el.code,
-      name: el.name,
-      ask: el.ask,
-    }));
-    // console.log(rates);
+    const arrayCurrency = Object.keys(json).filter((el) => el !== 'USDT');
+    return arrayCurrency;
+    /* this.setState({
+      arrayCurrency,
+    });
+  } */
+
+  getExchangeRate = async () => {
+    const curr = 'https://economia.awesomeapi.com.br/json/all';
+    const response = await fetch(curr);
+    const json = await response.json();
     this.setState({
-      currency: json,
-      exchangeRates: rates,
+      exchangeRates: json,
     });
   }
 
   componentDidMount = () => {
-    this.getCurrencies();
+    this.getExchangeRate();
+    // this.getCurrencies();
   };
 
   render() {
-    const { method, tag, currency } = this.state;
-    const { expense } = this.props;
-    console.log(expense);
+    const { method, tag, exchangeRates } = this.state;
 
     return (
       <div className="wallet">
@@ -87,14 +91,16 @@ class Wallet extends Component {
           <label htmlFor="currency-input">
             moeda
             <select
-              name="currencyCoin"
+              name="currency"
               type="text"
               onChange={ this.onExpense }
               data-testid="currency-input"
               id="currency-input"
             >
               {
-                Object.keys(currency).filter((el) => el !== 'USDT')
+                // arrayCurrency
+                // this.getCurrencies()
+                Object.keys(exchangeRates).filter((el) => el !== 'USDT')
                   .map((dropdown, index) => (
                     <option
                       key={ dropdown + index }
@@ -116,8 +122,8 @@ class Wallet extends Component {
               id="method-input"
             >
               <option value="Dinheiro">Dinheiro</option>
-              <option value="Cartão de Débito">Cartão de débito</option>
-              <option value="Cartão de Crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
             </select>
           </label>
           Categoria da Despesa:

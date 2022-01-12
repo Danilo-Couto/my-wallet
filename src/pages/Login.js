@@ -10,7 +10,6 @@ class Login extends Component {
     this.state = {
       email: '',
       senha: '',
-      // isButtonDisabled: true,
     };
   }
 
@@ -50,7 +49,6 @@ class Login extends Component {
             placeholder="exemplo@exemplo.com"
             data-testid="email-input"
             required
-            // value={email}
           />
           <input
             type="password"
@@ -59,8 +57,6 @@ class Login extends Component {
             data-testid="password-input"
             required
             minLength={ 6 }
-            // value={senha}
-
           />
         </section>
         <div className="link">

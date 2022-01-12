@@ -4,30 +4,21 @@ import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
 
 class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      totalAmount: '',
-    };
+  calcAmount = () => {
+    const { expenses } = this.props;
+    if (expenses) {
+      const total = expenses.reduce((acc, curr) => {
+        const askRate = Object.values(curr.exchangeRates)
+          .find((el) => el.code === curr.currency).ask;
+        return acc + (Number(askRate) * Number(curr.value));
+      }, 0).toFixed(2);
+      return total;
+    }
+    return 0;
   }
-
-  /*   calcAmount = () => {
-    const { expense } = this.props;
-    const arrayAmount = expense.map((el) => el.value);
-    const amount = arrayAmount.reduce((pre, curr) => Number(pre) + Number(curr));
-
-    this.setState({
-      totalAmount: amount,
-    });
-  }
-
-  componentDidUpdate = () => {
-    this.calcAmount();
-  } */
 
   render() {
     const { loginUser } = this.props;
-    const { totalAmount } = this.state;
 
     return (
       <div>
@@ -39,10 +30,9 @@ class Header extends Component {
           </h4>
           <h4 data-testid="total-field">
             despesa:
-            0
-            {totalAmount}
+            {this.calcAmount()}
           </h4>
-          <h4 data-testid="header-currency-field">câmbio:BRL</h4>
+          <h4 data-testid="header-currency-field">câmbio: BRL</h4>
         </header>
       </div>
     );
@@ -51,7 +41,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   loginUser: state.user.email,
-  expense: state.wallet.expenses,
+  expenses: state.wallet.expenses,
 });
 
 Header.propTypes = {
@@ -62,3 +52,5 @@ Header.propTypes = {
 }.isRequired;
 
 export default connect(mapStateToProps)(Header);
+
+// contribuição na função calcAmount do Gabriel Pinheiro
