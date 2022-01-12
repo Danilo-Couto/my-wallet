@@ -93,7 +93,11 @@ class Wallet extends Component {
               <td>{Number((val.exchangeRates[val.currency]).ask).toFixed(2)}</td>
               {' '}
               {/* cambio usado */}
-              <td>{((val.value) * ((val.exchangeRates[val.currency]).ask)).toFixed(2)}</td>
+              <td>
+                {((val.value) * ((val.exchangeRates[val.currency]).ask))
+                  .toFixed(2)}
+
+              </td>
               {' '}
               {/* valor convertido */}
               <td>Real</td>
@@ -101,8 +105,8 @@ class Wallet extends Component {
               {/* moeda de conversao */}
               {' '}
               <td>
-                <button>editar</button>
-                <button>excluir</button>
+                <button type="button">editar</button>
+                <button type="button" data-testid="delete-btn">excluir</button>
               </td>
             </tr>
           ))}
