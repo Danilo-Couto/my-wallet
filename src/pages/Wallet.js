@@ -11,10 +11,10 @@ class Wallet extends Component {
     this.state = {
       id: 0,
       value: '',
-      description: '',
+      description: 'descrição',
       currency: 'USD',
-      method: '',
-      tag: '',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
       exchangeRates: '',
     };
   }
@@ -73,13 +73,39 @@ class Wallet extends Component {
             <th>Moeda de conversão</th>
             <th>Editar/Excluir</th>
           </tr>
-          {/*           {data.map((val, key) => (
+          {expenses.map((val, key) => (
             <tr key={ key }>
-              <td>{val.name}</td>
-              <td>{val.age}</td>
-              <td>{val.gender}</td>
+              <td>{val.description}</td>
+              {' '}
+              {/* descricao */}
+              <td>{val.tag}</td>
+              {' '}
+              {/* tag */}
+              <td>{val.method}</td>
+              {' '}
+              {/* metodo */}
+              <td>{val.value}</td>
+              {' '}
+              {/* valor */}
+              <td>{(val.exchangeRates[val.currency].name).split('/')[0]}</td>
+              {' '}
+              {/* moeda */}
+              <td>{Number((val.exchangeRates[val.currency]).ask).toFixed(2)}</td>
+              {' '}
+              {/* cambio usado */}
+              <td>{((val.value) * ((val.exchangeRates[val.currency]).ask)).toFixed(2)}</td>
+              {' '}
+              {/* valor convertido */}
+              <td>Real</td>
+              {' '}
+              {/* moeda de conversao */}
+              {' '}
+              <td>
+                <button>editar</button>
+                <button>excluir</button>
+              </td>
             </tr>
-          ))} */}
+          ))}
         </table>
       </div>
     );
