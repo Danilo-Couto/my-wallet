@@ -53,4 +53,4 @@ Header.propTypes = {
 
 export default connect(mapStateToProps)(Header);
 
-// contribuição na função calcAmount do Gabriel Pinheiro
+// contribuição na função calcAmount do Gabriel Pinheiro;
