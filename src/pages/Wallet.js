@@ -41,17 +41,6 @@ class Wallet extends Component {
     this.getExchangeRate();
   };
 
-  /*   getCurrencies = async () => {
-    const curr = 'https://economia.awesomeapi.com.br/json/all';
-    const response = await fetch(curr);
-    const json = await response.json();
-    const arrayCurrency = Object.keys(json).filter((el) => el !== 'USDT');
-    return arrayCurrency;
-    /* this.setState({
-      arrayCurrency,
-    });
-  } */
-
   getExchangeRate = async () => {
     const curr = 'https://economia.awesomeapi.com.br/json/all';
     const response = await fetch(curr);
@@ -65,6 +54,36 @@ class Wallet extends Component {
     this.getExchangeRate();
     // this.getCurrencies();
   };
+
+  makeTable = () => {
+    const { expenses } = this.props;
+    console.log(expenses);
+
+    return (
+      <div>
+        <table>
+          <tr>
+            <th>Descrição</th>
+            <th>Tag</th>
+            <th>Método de pagamento</th>
+            <th>Valor</th>
+            <th>Moeda</th>
+            <th>Câmbio utilizado</th>
+            <th>Valor convertido</th>
+            <th>Moeda de conversão</th>
+            <th>Editar/Excluir</th>
+          </tr>
+          {/*           {data.map((val, key) => (
+            <tr key={ key }>
+              <td>{val.name}</td>
+              <td>{val.age}</td>
+              <td>{val.gender}</td>
+            </tr>
+          ))} */}
+        </table>
+      </div>
+    );
+  }
 
   render() {
     const { method, tag, exchangeRates } = this.state;
@@ -153,8 +172,11 @@ class Wallet extends Component {
         </section>
         <section
           className="chart"
-        />
-        TABELA
+        >
+          <br />
+          TABELA DE GASTOS
+          {this.makeTable()}
+        </section>
       </div>
     );
   }
@@ -165,7 +187,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  expense: state.wallet.expenses,
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
