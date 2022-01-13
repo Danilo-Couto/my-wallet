@@ -82,7 +82,7 @@ class Wallet extends Component {
             </tr>
           </tbody>
           <tfoot>
-            {expenses.map((val, key) => (
+            {expenses.map((val) => (
               <tr key={ val.id }>
                 <td>{val.description}</td>
                 {/* descricao */}
