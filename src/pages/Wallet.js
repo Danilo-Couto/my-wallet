@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
-import { expenseAction } from '../actions';
+import { deleteBtnAction, expenseAction } from '../actions';
 import Header from './Header';
 
 class Wallet extends Component {
@@ -52,64 +52,63 @@ class Wallet extends Component {
 
   componentDidMount = () => {
     this.getExchangeRate();
-    // this.getCurrencies();
   };
 
   makeTable = () => {
-    const { expenses } = this.props;
-    console.log(expenses);
+    const { expenses, deleteLineTable } = this.props;
+    // console.log(expenses);
+    // const newExpenses = this.delete();
 
     return (
       <div>
         <table>
-          <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
-          </tr>
-          {expenses.map((val, key) => (
-            <tr key={ key }>
-              <td>{val.description}</td>
-              {' '}
-              {/* descricao */}
-              <td>{val.tag}</td>
-              {' '}
-              {/* tag */}
-              <td>{val.method}</td>
-              {' '}
-              {/* metodo */}
-              <td>{val.value}</td>
-              {' '}
-              {/* valor */}
-              <td>{(val.exchangeRates[val.currency].name).split('/')[0]}</td>
-              {' '}
-              {/* moeda */}
-              <td>{Number((val.exchangeRates[val.currency]).ask).toFixed(2)}</td>
-              {' '}
-              {/* cambio usado */}
-              <td>
-                {((val.value) * ((val.exchangeRates[val.currency]).ask))
-                  .toFixed(2)}
-
-              </td>
-              {' '}
-              {/* valor convertido */}
-              <td>Real</td>
-              {' '}
-              {/* moeda de conversao */}
-              {' '}
-              <td>
-                <button type="button">editar</button>
-                <button type="button" data-testid="delete-btn">excluir</button>
-              </td>
-            </tr>
-          ))}
+          <tbody>
+          
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
+          </tbody>
+          <tfoot>
+            {expenses.map((val, key) => (
+              <tr key={ key }>
+                <td>{val.description}</td>
+                {/* descricao */}
+                <td>{val.tag}</td>
+                {/* tag */}
+                <td>{val.method}</td>
+                {/* metodo */}
+                <td>{val.value}</td>
+                {/* valor */}
+                <td>{(val.exchangeRates[val.currency].name).split('/')[0]}</td>
+                {/* moeda */}
+                <td>{Number((val.exchangeRates[val.currency]).ask).toFixed(2)}</td>
+                {/* cambio usado */}
+                <td>
+                  {((val.value) * ((val.exchangeRates[val.currency]).ask))
+                    .toFixed(2)}
+                </td>
+                {/* valor convertido */}
+                <td>Real</td>
+                {/* moeda de conversao */}
+                <td>
+                  <button type="button">editar</button>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                    onClick={ () => deleteLineTable(val.id) }
+                  >
+                    excluir
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tfoot>
         </table>
       </div>
     );
@@ -117,7 +116,6 @@ class Wallet extends Component {
 
   render() {
     const { method, tag, exchangeRates } = this.state;
-
     return (
       <div className="wallet">
         <Header />
@@ -214,6 +212,7 @@ class Wallet extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   setExpense: (payload) => dispatch(expenseAction(payload)),
+  deleteLineTable: (payload) => dispatch(deleteBtnAction(payload)),
 });
 
 const mapStateToProps = (state) => ({
