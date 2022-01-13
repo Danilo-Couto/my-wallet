@@ -2,6 +2,7 @@
 export const LOGIN = 'LOGIN';
 export const EXPENSE = 'EXPENSE';
 export const REMOVELINE = 'REMOVELINE';
+export const EDIT = 'EDIT';
 
 export const loginAction = (payload) => ({
   type: LOGIN,
@@ -18,19 +19,7 @@ export const deleteBtnAction = (payload) => ({
   payload,
 });
 
-/* export const inicialRequest = () => ({
-  type: 'request_inicial',
+export const editBtnAction = (payload) => ({
+  type: EDIT,
+  payload,
 });
-
-export const requestCurrencySucess = () => ({
-  type: 'request_Success',
-});
-
-export function requestCurrencyThunk() {
-  return (dispatch) => {
-    getCurrency().then((response) => {
-      //
-      dispatch(requestCurrencySucess('algumacoisa'));
-    });
-  };
-} */

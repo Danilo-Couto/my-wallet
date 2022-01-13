@@ -54,6 +54,14 @@ class Wallet extends Component {
     this.getExchangeRate();
   };
 
+  /*
+  editTable = (id) => {
+    const { expenses } = this.props;
+    // const editExpenseId = expenses.find((el) => el.id === id);
+    console.log('entrou');
+    return <p>Danilo é o cara</p>;
+  }
+ */
   makeTable = () => {
     const { expenses, deleteLineTable } = this.props;
 
@@ -61,19 +69,21 @@ class Wallet extends Component {
       <div>
         <table>
           <tbody>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <tr>
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
+            </tr>
           </tbody>
           <tfoot>
             {expenses.map((val, key) => (
-              <tr key={ key }>
+              <tr key={ val.id }>
                 <td>{val.description}</td>
                 {/* descricao */}
                 <td>{val.tag}</td>
@@ -94,7 +104,13 @@ class Wallet extends Component {
                 <td>Real</td>
                 {/* moeda de conversao */}
                 <td>
-                  <button type="button">editar</button>
+                  <button
+                    type="button"
+                    data-testid="edit-btn"
+                    onClick={ () => this.editTable(val.id) }
+                  >
+                    editar
+                  </button>
                   <button
                     type="button"
                     data-testid="delete-btn"
@@ -113,6 +129,7 @@ class Wallet extends Component {
 
   render() {
     const { method, tag, exchangeRates } = this.state;
+    console.log(this.editTable);
     return (
       <div className="wallet">
         <Header />
@@ -142,8 +159,6 @@ class Wallet extends Component {
               id="currency-input"
             >
               {
-                // arrayCurrency
-                // this.getCurrencies()
                 Object.keys(exchangeRates).filter((el) => el !== 'USDT')
                   .map((dropdown, index) => (
                     <option
@@ -201,6 +216,10 @@ class Wallet extends Component {
           <br />
           TABELA DE GASTOS
           {this.makeTable()}
+          {/*           {this.editTable}
+ */}
+          {' '}
+
         </section>
       </div>
     );
@@ -210,6 +229,7 @@ class Wallet extends Component {
 const mapDispatchToProps = (dispatch) => ({
   setExpense: (payload) => dispatch(expenseAction(payload)),
   deleteLineTable: (payload) => dispatch(deleteBtnAction(payload)),
+  // editlineTable: (payload) => dispatch(editBtnAction(payload)),
 });
 
 const mapStateToProps = (state) => ({
