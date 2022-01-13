@@ -56,23 +56,20 @@ class Wallet extends Component {
 
   makeTable = () => {
     const { expenses, deleteLineTable } = this.props;
-    // console.log(expenses);
-    // const newExpenses = this.delete();
 
     return (
       <div>
         <table>
           <tbody>
-          
-              <th>Descrição</th>
-              <th>Tag</th>
-              <th>Método de pagamento</th>
-              <th>Valor</th>
-              <th>Moeda</th>
-              <th>Câmbio utilizado</th>
-              <th>Valor convertido</th>
-              <th>Moeda de conversão</th>
-              <th>Editar/Excluir</th>
+            <th>Descrição</th>
+            <th>Tag</th>
+            <th>Método de pagamento</th>
+            <th>Valor</th>
+            <th>Moeda</th>
+            <th>Câmbio utilizado</th>
+            <th>Valor convertido</th>
+            <th>Moeda de conversão</th>
+            <th>Editar/Excluir</th>
           </tbody>
           <tfoot>
             {expenses.map((val, key) => (
