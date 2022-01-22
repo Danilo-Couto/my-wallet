@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
-import { deleteBtnAction, expenseAction } from '../actions';
+import { deleteBtnAction, expenseAction, formEditAction } from '../actions';
+import EditableTable from './EditableTable';
 import Header from './Header';
 
 class Wallet extends Component {
@@ -19,28 +20,6 @@ class Wallet extends Component {
     };
   }
 
-  onExpense = ({ target }) => {
-    const { name, value } = target;
-    this.setState({
-      [name]: value,
-    });
-  }
-
-  addExpense = () => {
-    const { setExpense } = this.props;
-    setExpense(this.state);
-    this.setState({
-      description: '',
-      method: '',
-      tag: '',
-      value: '',
-    });
-    document.querySelectorAll('input[type=text]').forEach((element) => {
-      element.value = '';
-    });
-    this.getExchangeRate();
-  };
-
   getExchangeRate = async () => {
     const curr = 'https://economia.awesomeapi.com.br/json/all';
     const response = await fetch(curr);
@@ -54,17 +33,26 @@ class Wallet extends Component {
     this.getExchangeRate();
   };
 
-  /*
-  editTable = (id) => {
-    const { expenses } = this.props;
-    // const editExpenseId = expenses.find((el) => el.id === id);
-    console.log('entrou');
-    return <p>Danilo é o cara</p>;
+  onExpense = ({ target }) => {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    });
   }
- */
-  makeTable = () => {
-    const { expenses, deleteLineTable } = this.props;
 
+  addExpense = () => {
+    const { setExpense } = this.props;
+    setExpense(this.state);
+    this.setState({
+    });
+    document.querySelectorAll('input[type=text]').forEach((element) => {
+      element.value = '';
+    });
+    this.getExchangeRate();
+  };
+
+  makeTable = () => {
+    const { expenses, deleteLineTable, setFormEditTrue } = this.props;
     return (
       <div>
         <table>
@@ -85,29 +73,21 @@ class Wallet extends Component {
             {expenses.map((val) => (
               <tr key={ val.id }>
                 <td>{val.description}</td>
-                {/* descricao */}
                 <td>{val.tag}</td>
-                {/* tag */}
                 <td>{val.method}</td>
-                {/* metodo */}
                 <td>{val.value}</td>
-                {/* valor */}
                 <td>{(val.exchangeRates[val.currency].name).split('/')[0]}</td>
-                {/* moeda */}
                 <td>{Number((val.exchangeRates[val.currency]).ask).toFixed(2)}</td>
-                {/* cambio usado */}
                 <td>
                   {((val.value) * ((val.exchangeRates[val.currency]).ask))
                     .toFixed(2)}
                 </td>
-                {/* valor convertido */}
                 <td>Real</td>
-                {/* moeda de conversao */}
                 <td>
                   <button
                     type="button"
                     data-testid="edit-btn"
-                    onClick={ () => this.editTable(val.id) }
+                    onClick={ () => setFormEditTrue(val) } // mando o val (obj a ser editado e mudo estado global do formEdit)
                   >
                     editar
                   </button>
@@ -129,7 +109,8 @@ class Wallet extends Component {
 
   render() {
     const { method, tag, exchangeRates } = this.state;
-    console.log(this.editTable);
+    const { formEdit } = this.props;
+
     return (
       <div className="wallet">
         <Header />
@@ -216,11 +197,8 @@ class Wallet extends Component {
           <br />
           TABELA DE GASTOS
           {this.makeTable()}
-          {/*           {this.editTable}
- */}
-          {' '}
-
         </section>
+        {formEdit && <EditableTable />}
       </div>
     );
   }
@@ -229,11 +207,12 @@ class Wallet extends Component {
 const mapDispatchToProps = (dispatch) => ({
   setExpense: (payload) => dispatch(expenseAction(payload)),
   deleteLineTable: (payload) => dispatch(deleteBtnAction(payload)),
-  // editlineTable: (payload) => dispatch(editBtnAction(payload)),
+  setFormEditTrue: (payload) => dispatch(formEditAction(payload)),
 });
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
+  formEdit: state.wallet.formEdit,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

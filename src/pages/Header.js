@@ -24,7 +24,6 @@ class Header extends Component {
         <header>
           <h4 data-testid="email-field">
             login:
-            {' '}
             {loginUser}
           </h4>
           <h4 data-testid="total-field">

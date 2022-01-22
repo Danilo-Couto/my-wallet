@@ -40,8 +40,8 @@ class Login extends Component {
     && senha.length >= minLengthPass;
 
     return (
-      <div className="Login">
-        <h3>Login</h3>
+      <div className="bg-slate-400">
+        <h3 className="text-3xl font-bold underline">Login</h3>
         <section className="login-inputs">
           <input
             type="email"

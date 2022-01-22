@@ -2,7 +2,10 @@
 export const LOGIN = 'LOGIN';
 export const EXPENSE = 'EXPENSE';
 export const REMOVELINE = 'REMOVELINE';
-export const EDIT = 'EDIT';
+export const OPEN_EDIT_TABLE = 'OPEN_EDIT_TABLE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const FORM_EDIT = 'FORM_EDIT';
+export const FORM_EDIT_TO_FALSE = 'FORM_EDIT_TO_FALSE';
 
 export const loginAction = (payload) => ({
   type: LOGIN,
@@ -19,7 +22,18 @@ export const deleteBtnAction = (payload) => ({
   payload,
 });
 
-export const editBtnAction = (payload) => ({
-  type: EDIT,
-  payload,
+export const formEditAction = (objectToBeEdit) => ({
+  type: FORM_EDIT,
+  objectToBeEdit,
+});
+
+export const formEditToFalseAction = () => ({
+  type: FORM_EDIT_TO_FALSE,
+});
+
+export const editBtnAction = (state, objectToBeEdit, formEdit) => ({
+  type: EDIT_EXPENSE,
+  state,
+  objectToBeEdit,
+  formEdit,
 });
