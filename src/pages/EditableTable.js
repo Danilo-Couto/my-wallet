@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editBtnAction, formEditToFalseAction } from '../actions';
-import editable from './editable.css';
+import './editable.css';
 
 class EditableTable extends Component {
   constructor() {

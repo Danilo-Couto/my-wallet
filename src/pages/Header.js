@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
-import header from './header.css';
+import './header.css';
 
 class Header extends Component {
   calcAmount = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
 import { loginAction } from '../actions';
-import login from './login.css';
+import './login.css';
 
 class Login extends Component {
   constructor() {

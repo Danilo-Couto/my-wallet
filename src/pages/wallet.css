@@ -8,7 +8,7 @@
     height:max-content;
     background: rgb(110, 142, 110);;
 	color: #fff;
-	padding: 20px 20px 20px;
+	padding: 10px 10px 10px;
     text-align: center;
     flex-direction: column;   
     text-align:left;
@@ -75,3 +75,9 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 600px) {
+    .wallet-container  {
+        border-radius: 0px;
+    }
+  }

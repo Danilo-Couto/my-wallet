@@ -5,7 +5,7 @@ import { Component } from 'react/cjs/react.production.min';
 import { deleteBtnAction, expenseAction, formEditAction } from '../actions';
 import EditableTable from './EditableTable';
 import Header from './Header';
-import wallet from './wallet.css';
+import './wallet.css';
 
 class Wallet extends Component {
   constructor() {

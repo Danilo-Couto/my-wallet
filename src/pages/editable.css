@@ -28,3 +28,9 @@
     font-size: large;
     font-weight: bolder;
 }
+
+@media (max-width: 600px) {
+    .editable-main {
+        border-radius: 0px;
+    }
+  }

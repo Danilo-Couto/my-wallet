@@ -6,3 +6,9 @@
     box-shadow: 10px 11px 35px 2px rgba(0, 0, 0, 0.14);
     border-radius: 1em;
 }  
+
+@media (max-width: 600px) {
+    .header-main {
+        flex-wrap: wrap;
+    }
+  }
