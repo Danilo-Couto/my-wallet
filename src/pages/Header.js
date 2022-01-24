@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
+import header from './header.css';
 
 class Header extends Component {
   calcAmount = () => {
@@ -21,16 +22,16 @@ class Header extends Component {
     const { loginUser } = this.props;
     return (
       <div>
-        <header>
+        <header className="header-main">
           <h4 data-testid="email-field">
-            login:
             {loginUser}
           </h4>
-          <h4 data-testid="total-field">
-            despesa:
-            {this.calcAmount()}
-          </h4>
-          <h4 data-testid="header-currency-field">câmbio: BRL</h4>
+          <div>
+            <h2 data-testid="total-field">
+              {this.calcAmount()}
+            </h2>
+            <h4 data-testid="header-currency-field">BRL</h4>
+          </div>
         </header>
       </div>
     );

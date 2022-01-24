@@ -1,0 +1,77 @@
+.wallet-container {
+	color: #fff;
+	padding: 20px 20px 20px;
+  }
+
+  .wallet-inputs{
+    width:fit-content;
+    height:max-content;
+    background: rgb(110, 142, 110);;
+	color: #fff;
+	padding: 20px 20px 20px;
+    text-align: center;
+    flex-direction: column;   
+    text-align:left;
+    border-radius: 1em;
+    box-shadow: 10px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    float: left;
+  }
+
+.btn-add-exp{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: #3B6896;
+    border: 0;
+    transition-duration: 0.8s;
+    border-radius: 0px;
+    margin-top: 10px;
+	padding: 10px 10px 10px;
+    border-radius: 1em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    width: 100%; 
+}
+
+.inputs-fields{
+    padding: 10px 10px 10px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.title-page{
+    text-align: center !important;
+    color: #3B6896;
+}
+
+.table{
+    border-collapse: collapse;
+    margin: -15px 0;
+    width: 75%;
+    float: right;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+
+.table th, .table td {
+    padding: 12px 15px;
+}
+
+.table th {
+    background: rgb(110, 142, 110);
+    color: white;
+}
+
+.table tr {
+    background: rgb(162, 161, 161);
+}
+
+.table tr:nth-of-type(odd) {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.tfoot-table {
+    display: flex;
+    flex-direction: column;
+}

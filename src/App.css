@@ -29,6 +29,10 @@
   color: #61dafb;
 }
 
+.Login {
+  background-color: #282c34;
+}
+
 @keyframes App-logo-spin {
 
   from {

@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react/cjs/react.production.min';
 import { loginAction } from '../actions';
+import login from './login.css';
 
 class Login extends Component {
   constructor() {
@@ -40,10 +41,11 @@ class Login extends Component {
     && senha.length >= minLengthPass;
 
     return (
-      <div className="bg-slate-400">
-        <h3 className="text-3xl font-bold underline">Login</h3>
-        <section className="login-inputs">
+      <div className="main">
+        <h3 className="sign">Login</h3>
+        <section className="form1">
           <input
+            className="email"
             type="email"
             onChange={ (e) => this.setState({ email: e.target.value }) }
             placeholder="exemplo@exemplo.com"
@@ -51,6 +53,7 @@ class Login extends Component {
             required
           />
           <input
+            className="pass"
             type="password"
             onChange={ (e) => this.setState({ senha: e.target.value }) }
             placeholder="Senha"
@@ -59,8 +62,9 @@ class Login extends Component {
             minLength={ 6 }
           />
         </section>
-        <div className="link">
+        <div>
           <button
+            className="button"
             type="button"
             disabled={ !enabled }
             onClick={ this.submitLogin }

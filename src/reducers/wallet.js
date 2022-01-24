@@ -1,5 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { EDIT_EXPENSE, EXPENSE, FORM_EDIT, FORM_EDIT_TO_FALSE, REMOVELINE } from '../actions';
+import { EDIT_EXPENSE, EXPENSE, FORM_EDIT,
+  FORM_EDIT_TO_FALSE, REMOVELINE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],

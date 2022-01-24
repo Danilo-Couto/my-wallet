@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editBtnAction, formEditToFalseAction } from '../actions';
+import editable from './editable.css';
 
 class EditableTable extends Component {
   constructor() {
@@ -34,17 +35,19 @@ class EditableTable extends Component {
       const { editLineTable, objectToBeEdit, setFormEditFalse } = this.props;
 
       return (
-        <div>
+        <div className="editable-main">
           <h4>EDITANDO INFORMAÇÕES</h4>
-          <section className="wallet-editing">
-            Despesa:
+          <section className="editable-table">
+            Valor:
             <input
+              className="editable-imputs"
               name="value"
               type="text"
               onChange={ this.onExpense }
             />
             Descrição da Despesa:
             <input
+              className="editable-imputs"
               name="description"
               type="text"
               onChange={ this.onExpense }
@@ -90,15 +93,16 @@ class EditableTable extends Component {
               <option value="Transporte">Transporte</option>
               <option value="Saúde">Saúde</option>
             </select>
-            <button
-              type="button"
-              onClick={ () => {
-                editLineTable(this.state, objectToBeEdit); setFormEditFalse();/* formEdit(); */
-              } }
-            >
-              Editar despesa
-            </button>
           </section>
+          <button
+            className="btn-edit-exp"
+            type="button"
+            onClick={ () => {
+              editLineTable(this.state, objectToBeEdit); setFormEditFalse();/* formEdit(); */
+            } }
+          >
+            Editar despesa
+          </button>
         </div>
       );
     }
