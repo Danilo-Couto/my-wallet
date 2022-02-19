@@ -1,57 +1,4 @@
-### Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
-
----
-
-# Boas vindas ao repositório do projeto Trybe Wallet!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
----
-
-
-# Sumário
-
-- [Boas vindas ao repositório do projeto Trybe Wallet!](#boas-vindas-ao-repositório-do-projeto-trybe-wallet)
-- [Sumário](#sumário)
-- [Habilidades](#habilidades)
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de Entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-- [Como desenvolver](#como-desenvolver)
-  - [Linter](#linter)
-  - [Configurando o Redux DevTools](#configurando-o-redux-devtools)
-  - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
-  - [Execução de testes unitários](#execução-de-testes-unitários)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Lista de requisitos](#lista-de-requisitos)
-    - [Página de Login](#página-de-login)
-      - [1. Crie uma página inicial de login com os seguintes campos e características:](#1-crie-uma-página-inicial-de-login-com-os-seguintes-campos-e-características)
-    - [Página da Carteira](#página-da-carteira)
-    - [Configurando sua página](#configurando-sua-página)
-      - [2. Crie uma página para sua carteira com as seguintes características:](#2-crie-uma-página-para-sua-carteira-com-as-seguintes-características)
-    - [Header](#header)
-      - [3. Crie um header para a página de carteira contendo as seguintes características:](#3-crie-um-header-para-a-página-de-carteira-contendo-as-seguintes-características)
-    - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
-      - [4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:](#4-desenvolva-um-formulário-para-adicionar-uma-despesa-contendo-as-seguintes-características)
-      - [5. Implemente a lógica para preencher as opções do campo "Moedas" buscando as siglas da API:](#5-implemente-a-lógica-para-preencher-as-opções-do-campo-moedas-buscando-as-siglas-da-api)
-    - [Tabela de Gastos](#tabela-de-gastos)
-      - [6. Desenvolva uma tabela com os gastos contendo as seguintes características:](#6-desenvolva-uma-tabela-com-os-gastos-contendo-as-seguintes-características)
-      - [7. Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação](#7-implemente-a-lógica-para-que-a-tabela-seja-alimentada-pleo-estado-da-aplicação)
-      - [8. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:](#8-crie-um-botão-para-deletar-uma-despesa-da-tabela-contendo-as-seguintes-características)
-    - [Bônus](#bônus)
-      - [9. Crie um botão para editar uma despesa da tabela contendo as seguintes características:](#9-crie-um-botão-para-editar-uma-despesa-da-tabela-contendo-as-seguintes-características)
-- [Avisos Finais](#avisos-finais)
-
----
+# Boas vindas ao repositório do projeto MyWallet!
 
 # Habilidades
 Neste projeto, verificamos se voce é capaz de:
@@ -90,24 +37,13 @@ Você deve desenvolver uma aplicação em React que use Redux como ferramenta de
 
 Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
 
-## Data de Entrega
-
-  - Projeto individual.
-
-  - Serão três dias de projeto.
-  
-  - Data de entrega para avaliação final do projeto: `19/01/2022 - 14:00h`.
-
----
-
 # Instruções para entregar seu projeto
 
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-016-b-project-trybewallet.git`
+  * `git clone git@github.com:...'
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-016-b-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -148,7 +84,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
 
 ---
 
@@ -610,28 +546,10 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
-
----
-
-### Revisando um pull request
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
-# Avisos Finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
