@@ -1,3 +1,4 @@
+
 # Habilidades
   * Criar um store Redux em aplicações React
   * Criar reducers no Redux em aplicações React
@@ -23,9 +24,6 @@ Você deve desenvolver uma aplicação em React que use Redux como ferramenta de
 
 Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
 
-## Antes de começar a desenvolver
-
-1. Clone o repositório
   * Entre na pasta do repositório que você acabou de clonar:
 
 2. Instale as dependências e inicialize o projeto
@@ -67,7 +65,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
 
 ---
 
@@ -448,3 +446,23 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     * O botão para submeter a despesa para edição deverá conter **exatamente** o texto "Editar despesa"
 
     **Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
+
+**O que será verificado:**
+
+  - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"
+  - Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global
+
+---
+
+## Depois de terminar o desenvolvimento
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
