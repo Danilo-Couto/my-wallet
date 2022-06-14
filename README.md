@@ -1,77 +1,11 @@
-### Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
-
----
-
-# Boas vindas ao repositório do projeto Trybe Wallet!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
----
-
-
-# Sumário
-
-- [Boas vindas ao repositório do projeto Trybe Wallet!](#boas-vindas-ao-repositório-do-projeto-trybe-wallet)
-- [Sumário](#sumário)
-- [Habilidades](#habilidades)
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de Entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-- [Como desenvolver](#como-desenvolver)
-  - [Linter](#linter)
-  - [Configurando o Redux DevTools](#configurando-o-redux-devtools)
-  - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
-  - [Execução de testes unitários](#execução-de-testes-unitários)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Lista de requisitos](#lista-de-requisitos)
-    - [Página de Login](#página-de-login)
-      - [1. Crie uma página inicial de login com os seguintes campos e características:](#1-crie-uma-página-inicial-de-login-com-os-seguintes-campos-e-características)
-    - [Página da Carteira](#página-da-carteira)
-    - [Configurando sua página](#configurando-sua-página)
-      - [2. Crie uma página para sua carteira com as seguintes características:](#2-crie-uma-página-para-sua-carteira-com-as-seguintes-características)
-    - [Header](#header)
-      - [3. Crie um header para a página de carteira contendo as seguintes características:](#3-crie-um-header-para-a-página-de-carteira-contendo-as-seguintes-características)
-    - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
-      - [4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:](#4-desenvolva-um-formulário-para-adicionar-uma-despesa-contendo-as-seguintes-características)
-      - [5. Implemente a lógica para preencher as opções do campo "Moedas" buscando as siglas da API:](#5-implemente-a-lógica-para-preencher-as-opções-do-campo-moedas-buscando-as-siglas-da-api)
-    - [Tabela de Gastos](#tabela-de-gastos)
-      - [6. Desenvolva uma tabela com os gastos contendo as seguintes características:](#6-desenvolva-uma-tabela-com-os-gastos-contendo-as-seguintes-características)
-      - [7. Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação](#7-implemente-a-lógica-para-que-a-tabela-seja-alimentada-pleo-estado-da-aplicação)
-      - [8. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:](#8-crie-um-botão-para-deletar-uma-despesa-da-tabela-contendo-as-seguintes-características)
-    - [Bônus](#bônus)
-      - [9. Crie um botão para editar uma despesa da tabela contendo as seguintes características:](#9-crie-um-botão-para-editar-uma-despesa-da-tabela-contendo-as-seguintes-características)
-- [Avisos Finais](#avisos-finais)
-
----
-
 # Habilidades
-Neste projeto, verificamos se voce é capaz de:
-
   * Criar um store Redux em aplicações React
-
   * Criar reducers no Redux em aplicações React
-
   * Criar actions no Redux em aplicações React
-
   * Criar dispatchers no Redux em aplicações React
-
   * Conectar Redux aos componentes React
-
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
-
 ---
-
-# Entregáveis
-
 ## O que deverá ser desenvolvido
 
 Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
@@ -83,31 +17,16 @@ Para entregar o seu projeto você deverá criar um Pull Request neste repositór
 
 Lembre-se que você pode consultar nosso conteúdo sobre Git & GitHub no Course sempre que precisar!
 
-
 ## Desenvolvimento
 
 Você deve desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado.
 
 Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
 
-## Data de Entrega
-
-  - Projeto individual.
-
-  - Serão três dias de projeto.
-  
-  - Data de entrega para avaliação final do projeto: `19/01/2022 - 14:00h`.
-
----
-
-# Instruções para entregar seu projeto
-
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-016-b-project-trybewallet.git`
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-016-b-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -168,22 +87,6 @@ Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato
 }
 ```
 
-É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
-
-Outra coisa importante: devido a estrutura que o avaliador utiliza para realizar os testes, é **necessário** que o seu `<Provider />` e o seu `<BrowserRouter />` estejam no arquivo `index.js` e **não** no `<App />`.
-
-## Linter
-
-Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o *linter* localmente no projeto, execute o comando abaixo: 
-
-`npm run lint`
-
-⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
-
-Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
-
----
-
 ## Configurando o Redux DevTools
 Pra usarmos o Redux DevTools com o Redux-Thunk, vamos utilizar uma biblioteca chamada `composeWithDevTools`, ela já está no package.json, a única coisa que você vai precisar fazer é configurar a sua store, por exemplo:
 
@@ -236,56 +139,6 @@ O retorno desse endpoint será algo no formato:
 Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
 
 ---
-
-## Execução de testes unitários
-
-Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
-
-Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
-
-Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
-
-Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
-
-```html
-<button data-testid="my-action"></button>
-```
-
-ou
-
-```html
-<a data-testid="my-action"><a/>
-```
-
-ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação.
-
-Em alguns requisitos, utilizamos o `getByRole` para poder selecionar os elementos de forma semântica. Portanto atente-se às instruções de cada requisito. Por exemplo, se o requisito pedir explicitamente um `button`, você deverá utilizar exatamente esse elemento.
-
-Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente, basta executar:
-
-```bash
-npm test
-```
-
-### Dica: desativando testes
-
-Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
-
-![image](describe-only.png)
-![image](only-all-green.png)
-
-Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `test`.
-
-![image](test-only.png)
-![image](only-one-green.png)
-
-
----
-
-# Requisitos do projeto
-:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
-
-:warning: **Os gifs são meramente ilustrativos para visualizar o fluxo da aplicação, os nomes devem seguir os requisitos e não o gif.** :warning:
 
 ## Lista de requisitos
 
@@ -595,43 +448,3 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     * O botão para submeter a despesa para edição deverá conter **exatamente** o texto "Editar despesa"
 
     **Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
-
-**O que será verificado:**
-
-  - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"
-  - Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global
-
----
-
-## Depois de terminar o desenvolvimento
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
-
----
-
-### Revisando um pull request
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
-# Avisos Finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
-
----
