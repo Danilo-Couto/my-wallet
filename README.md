@@ -1,28 +1,22 @@
 ## O Projeto
 
-Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
+Uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
   - Adicionar, remover e editar um gasto;
   - Visualizar uma tabelas com seus gastos;
   - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
 # Habilidades
-  * Criar um store Redux em aplicações React
-  * Criar reducers no Redux em aplicações React
-  * Criar actions no Redux em aplicações React
-  * Criar dispatchers no Redux em aplicações React
+  * Store Redux em aplicações React
+  * Reducers no Redux em aplicações React
+  * Actions no Redux em aplicações React
+  * Dispatchers no Redux em aplicações React
   * Conectar Redux aos componentes React
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 ---
 
 ## Desenvolvimento
 
-Você deve desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado.
-
-Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
-
-  * Entre na pasta do repositório que você acabou de clonar:
-
-2. Instale as dependências e inicialize o projeto
+. Instale as dependências e inicialize o projeto
   * Instale as dependências:
     * `npm install`
   * Inicialize o projeto:
@@ -30,81 +24,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   * Verifique que os testes estão executando:
     * `npm test` (os testes devem rodar e falhar)
 
-3. Crie uma branch a partir da branch `master`
-
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os commits do seu projeto
----
-
-## Durante o desenvolvimento
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u origin nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-## Depois de terminar o desenvolvimento (opcional)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
-
----
-
-# Como desenvolver
-
-Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
-
-```
-{
-  user: {
-    email: '',
-  },
-  wallet: {
-    currencies: [],
-    expenses: []
-  }
-}
-```
-
-## Configurando o Redux DevTools
-Pra usarmos o Redux DevTools com o Redux-Thunk, vamos utilizar uma biblioteca chamada `composeWithDevTools`, ela já está no package.json, a única coisa que você vai precisar fazer é configurar a sua store, por exemplo:
-
-```
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import reducer from '../reducers';
-
-const store = createStore(
-  reducer,
-  composeWithDevTools(
-    applyMiddleware(thunk),
-  ),
-);
-
-export default store;
-```
-
----
-
 ## Documentação da API de Cotações de Moedas
 
-Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
+Consumido os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, consultar o seguinte _endpoint_:
 
 - https://economia.awesomeapi.com.br/json/all
 
@@ -130,7 +52,7 @@ O retorno desse endpoint será algo no formato:
 }
 ```
 
-Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
+Mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
 
 ---
 
