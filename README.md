@@ -5,7 +5,7 @@ Uma carteira de controle de gastos com conversor de moedas, ao utilizar essa apl
   - Visualizar uma tabelas com seus gastos;
   - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
-# Habilidades
+## Habilidades
   * Store Redux em aplicações React
   * Reducers no Redux em aplicações React
   * Actions no Redux em aplicações React
@@ -14,15 +14,8 @@ Uma carteira de controle de gastos com conversor de moedas, ao utilizar essa apl
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 ---
 
-## Desenvolvimento
-
-. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-  * Verifique que os testes estão executando:
-    * `npm test` (os testes devem rodar e falhar)
+## Deploy
+https://my-wallet-liard.vercel.app/
 
 ## Documentação da API de Cotações de Moedas
 
@@ -369,18 +362,3 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"
   - Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global
-
----
-
-## Depois de terminar o desenvolvimento
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time.
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
